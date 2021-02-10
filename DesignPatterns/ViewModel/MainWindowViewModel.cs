@@ -11,7 +11,7 @@ namespace DesignPatterns.ViewModel
 {
     class MainWindowViewModel : INotifyPropertyChanged
     {
-        private Database DB = Database.Instance;
+        readonly private Database DB = Database.Instance;
 
         #region Properties
 
