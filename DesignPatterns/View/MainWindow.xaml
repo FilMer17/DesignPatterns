@@ -1,0 +1,67 @@
+﻿<Window x:Class="DesignPatterns.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodel="clr-namespace:DesignPatterns.ViewModel"
+        xmlns:local="clr-namespace:DesignPatterns.View"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="940">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Column="0" TextWrapping="Wrap">
+            Křestní jméno
+            <LineBreak />Alespoň 2 písmena
+            <LineBreak />Vzor: Adam
+        </TextBlock>
+        <TextBlock Grid.Column="1" TextWrapping="Wrap">
+            Příjmení
+            <LineBreak />Alespoň 2 písmena
+            <LineBreak />Vzor: Novák
+        </TextBlock>
+        <TextBlock Grid.Column="2" TextWrapping="Wrap">
+            Datum narození
+            <LineBreak />Pouze reálné datum od roku 1900 do 2021
+            <LineBreak />Jednotlivé složky oddělit tečkou [.]
+            <LineBreak />Vzor: 07.03.2000
+        </TextBlock>
+        <TextBlock Grid.Column="3" TextWrapping="Wrap">
+            Rodné číslo
+            <LineBreak />Pouze 4 čísla za lomítkem
+            <LineBreak />Před rokem 1954 možnost 3 čísel
+            <LineBreak />Vzor: 0623
+        </TextBlock>
+
+        <TextBox Grid.Column="0" Grid.Row="1"
+                 FontSize="24" VerticalContentAlignment="Bottom"
+                 Text="{Binding Firstname}" />
+        <TextBox Grid.Column="1" Grid.Row="1"
+                 FontSize="24" VerticalContentAlignment="Bottom"
+                 Text="{Binding Lastname}" />
+        <TextBox Grid.Column="2" Grid.Row="1"
+                 FontSize="24" VerticalContentAlignment="Bottom"
+                 Text="{Binding Birthday}" />
+        <TextBox Grid.Column="3" Grid.Row="1"
+                 FontSize="24" VerticalContentAlignment="Bottom"
+                 Text="{Binding SSN}" />
+
+        <Button Grid.Column="4" Grid.Row="1" 
+                Content="Uložit" Command="{Binding AddPerson}" />
+
+        <TextBox Grid.ColumnSpan="6" Grid.Row="2" 
+                 Text="{Binding Output}" IsReadOnly="True"/>
+    </Grid>
+</Window>
