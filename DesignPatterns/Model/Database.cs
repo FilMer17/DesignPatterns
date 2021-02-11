@@ -43,7 +43,6 @@ namespace DesignPatterns.Model
             string output = "";
             foreach (KeyValuePair<int, Person> item in data)
             {
-                //Console.WriteLine(item.Key.ToString() + " " + item.Value.ToString());
                 output += item.Value.ToString() + "\n";
             }
 

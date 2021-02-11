@@ -4,7 +4,7 @@ using DesignPatterns.Interfaces;
 
 namespace DesignPatterns.Validators
 {
-    class SSNValidator : ISSNValidator
+    public class SSNValidator : ISSNValidator
     {
         public bool IsValid(string s, int year)
         {

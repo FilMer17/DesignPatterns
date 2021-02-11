@@ -4,7 +4,7 @@ using DesignPatterns.Interfaces;
 
 namespace DesignPatterns.Validators
 {
-    class NameValidator : IStringValidator
+    public class NameValidator : IStringValidator
     {
         public bool IsValid(string s) 
         {

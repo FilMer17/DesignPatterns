@@ -5,7 +5,7 @@ using DesignPatterns.Interfaces;
 
 namespace DesignPatterns.Validators
 {
-    class BirthdayValidator : IStringValidator
+    public class BirthdayValidator : IStringValidator
     {
         public bool IsValid(string s) 
         {
