@@ -13,7 +13,6 @@ namespace DesignPatterns.Validators
             else if (year < 1954)
                 if (s.Length == 3 || s.Length == 4)
                     return true;
-                MessageBox.Show("Špatně zadané RODNÉ ČÍSLO!\nViz vzor.", "Chyba");
 
             return false;
         }

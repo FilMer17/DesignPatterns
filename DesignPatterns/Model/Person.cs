@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Linq;
-
+using System.Windows;
 using DesignPatterns.Interfaces;
 using DesignPatterns.Validators;
 
@@ -31,6 +31,7 @@ namespace DesignPatterns.Model
             bool bdayValid = bdayValidator.IsValid(bday);
             bool ssnValid = false;
             string[] bdayData = new string[3];
+            string error = "";
 
             if (bdayValid)
             {
@@ -54,6 +55,21 @@ namespace DesignPatterns.Model
                 SSN = bdayData[2].Substring(bdayData[2].Length - 2) + bdayData[1] + bdayData[0] + "/" + ssn;
 
                 return true;
+            }
+            else
+            {
+                error += "Špatně zadané:\n";
+                if (!areValid[0])
+                    error += "KŘESTNÍ JMÉNO\n";
+                if (!areValid[1])
+                    error += "PŘÍJMENÍ\n";
+                if (!areValid[2])
+                    error += "DATUM NAROZENÍ\n";
+                if (!areValid[3])
+                    error += "RODNÉ ČÍSLO\n";
+
+                error += "Viz vzor.";
+                MessageBox.Show(error, "Chyba");
             }
 
             return false;

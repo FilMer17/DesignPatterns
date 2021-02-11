@@ -11,7 +11,6 @@ namespace DesignPatterns.Validators
             if (s.Length > 1)
                 return true;
             
-            MessageBox.Show("Špatně zadané JMÉNO!\nViz vzor.", "Chyba");
             return s.Length > 1; }
     }
 }
